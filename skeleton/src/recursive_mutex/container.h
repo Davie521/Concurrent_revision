@@ -1,7 +1,6 @@
 #ifndef CONTAINER_H
 #define CONTAINER_H
 
-
 #include <iostream>
 #include <vector>
 
@@ -19,7 +18,7 @@ class Container {
   void AddAll(const std::vector<T>& elems) {
     mutex_.Lock();
     for (auto& elem : elems) {
-      Add(elem);
+      data_.push_back(elem);
     }
     mutex_.Unlock();
   }
